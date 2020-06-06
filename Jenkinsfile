@@ -1,15 +1,14 @@
 pipeline {
 	agent any
-
+	
     stages {
 
-        stage('SCM') {
-	   steps {
-		echo 'Gathering code from version control'
-		git branch: '${branch}', url: 'https://github.com/trussbtech/Javav-maven-HelloWorld.git'
-	   }
+       stage('SCM') {
+		steps {
+			echo 'Gathering code from version control'
+			git branch: '${branch}', url: 'https://github.com/trussbtech/Java-Junit-HelloWorld-.git'
+			}
         }
-
 
         stage ('Build') {
           steps {
@@ -20,7 +19,7 @@ pipeline {
 
         stage ('Test') {
           steps {
-			sh 'mvn test'
+		   echo "testcode "
 		 }
 	   }
 
