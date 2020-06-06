@@ -10,12 +10,12 @@ pipeline {
 			}
         }
 
-        stage ('Build') {
-          steps {
-			sh 'mvn --version'
-			sh 'mvn clean compile'
-		 }
-	   }
+      stage('build'){
+        withMaven(maven: 'mvn') {
+            sh "mvn clean compile"
+      	}
+      }
+
 
         stage ('Test') {
           steps {
