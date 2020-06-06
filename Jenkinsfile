@@ -24,9 +24,10 @@ pipeline {
 				}
 		}
 		
-		stage('Deliver') { 
+	stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh' 
+                echo "Begin Delivery process" 
+                // sh './jenkins/scripts/deliver.sh' 
             }
         }
     }
